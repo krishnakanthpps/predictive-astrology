@@ -100,18 +100,32 @@ def nature_of_planet(planet_name, nature):
     return planet_dict[planet_name][nature]
 
 
+def get_planet_nature(planet_name, nature):
+    nat_deg = ('exaltation', 'debilitation', 'mooltrikona')
+    res = nature_of_planet(planet_name, nature)
+
+    if nature in nat_deg and len(res) > 2:
+        return f"{planet_name} {nature}: {res[1]} degree - {res[2]} degree"
+    elif nature in nat_deg and len(res) == 2:
+        return f"{planet_name} {nature}: {res[1]} degree"
+    else:
+        return f"{planet_name} {nature}:\n{res}"
+
+
 if __name__ == "__main__":
     planet_name = 'merc'
-    nature = 'karaka_of'
+    # nature = 'karaka_of'
+    nature1 = 'direction'
+    print(get_planet_nature(planet_name, nature1))
 
-    tuples = ('exaltation', 'debilitation', 'mooltrikona')
-    print(f"{planet_name} {nature}:\n")
-    for elem in planet_dict[planet_name][nature]:
-        if nature in tuples:
-            if isinstance(elem, int):
-                print(f"{elem} degree")
-            else:
-                print(f"{elem}")
-            print()
-        else:
-            print(elem)
+    # tuples = ('exaltation', 'debilitation', 'mooltrikona')
+    # print(f"{planet_name} {nature1}:\n")
+    # for elem in planet_dict[planet_name][nature1]:
+    #     if nature1 in tuples:
+    #         if isinstance(elem, int):
+    #             print(f"{elem} degree")
+    #         else:
+    #             print(f"{elem}")
+    #         print()
+    #     else:
+    #         print(elem)
