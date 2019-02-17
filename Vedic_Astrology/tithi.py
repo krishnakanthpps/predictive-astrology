@@ -46,11 +46,13 @@ def tithi(moon_long, sun_long):
 def tithi_test():
     moon = [(190, 5, 0), (167, 40, 0), (152, 44, 0), (88, 53, 0)]
     sun = [(156, 7, 0), (178, 49, 0), (177, 49, 0), (304, 4, 0)]
+    res = ["tritiya, shukla paksha", "amavasya, krishna paksha", "triyodashi, krishna paksha",
+           "triyodashi, shukla paksha"]
 
     for i in range(len(moon)):
         m = moon[i]
         s = sun[i]
-        print(f"Moon Longitude: {m}\nSun Long.: {s}\ntithi: {tithi(m, s)}")
+        assert tithi(m, s) == res[i]
 
 
 if __name__ == "__main__":
