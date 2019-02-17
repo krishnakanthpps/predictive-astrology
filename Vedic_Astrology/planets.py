@@ -1,4 +1,5 @@
 # Nature of planets
+# Ref: Practical Vedic Astrology, G.S.Agarwal, Sagar Publications
 planet_dict = {
     'sun': {
         'traits': ['satwik', 'fiery', 'kshatriya'],
