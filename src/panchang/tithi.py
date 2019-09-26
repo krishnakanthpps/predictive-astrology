@@ -19,6 +19,19 @@ def get_tithi(moon_long, sun_long):
     -------
     tuple, (tithi, paksha)
     """
+    #TODO: Check inputs are tuples containing ints
+    # Check length of inputs
+    if len(moon_long) and len(sun_long) != 3:
+        return None
+    # check type of elements in inputs
+    for elem in moon_long:
+        if type(elem) != int:
+            return None
+    for elem in sun_long:
+        if type(elem) != int:
+            return None
+        
+    
     dl = utils.diff_long(moon_long, sun_long)
     t = int(dl // math.radians(12))
     # print(f"tithi(numeric): {t}")
