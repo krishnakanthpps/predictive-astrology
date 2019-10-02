@@ -1,7 +1,9 @@
 """Calculate karnas"""
 
 import math
-import utils
+import sys
+sys.path.append("/home/arunkhattri/github/predictive-astrology/src/")
+from utilities import utils
 
 KARNA_LIST = ['kinstughna', 'bava', 'balava', 'kaulava', 'taitila', 'gara',
               'vanija', 'vishthi', 'bava', 'balava', 'kaulava', 'taitila',
@@ -15,7 +17,7 @@ KARNA_LIST = ['kinstughna', 'bava', 'balava', 'kaulava', 'taitila', 'gara',
               'gara', 'vanija', 'vishthi', 'shakuni', 'chatushpada', 'naga']
 
 
-def karna(moon_long, sun_long):
+def get_karna(moon_long, sun_long):
     """
     params moon_long: Moon longitude in (degree, minute, secoonds)
     params sun_long: Sun longitude in (degree, minute, secoonds)
@@ -29,4 +31,4 @@ def karna(moon_long, sun_long):
 if __name__ == '__main__':
     m_long = (192, 37, 29)
     s_long = (5, 30, 37)
-    print(f"Karna: {karna(m_long, s_long)}")
+    print(f"Karna: {get_karna(m_long, s_long)}")
